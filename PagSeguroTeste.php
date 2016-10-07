@@ -1,5 +1,5 @@
 <?php
-require_once 'PagSeguroLibrary/PagSeguroLibrary.php';
+require_once 'include/PagSeguroLibrary/PagSeguroLibrary.php';
 
 /** INICIO PROCESSO PAGSEGURO */
 $paymentrequest = new PagSeguroPaymentRequest();
