@@ -1,0 +1,7 @@
+{
+    "require": {
+        "omnipay/stripe": "^2.4",
+        "omnipay/paypal": "~2.0",
+        "abdala/omnipay-pagseguro": "^0.1.0"
+    }
+}
