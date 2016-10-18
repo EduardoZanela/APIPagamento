@@ -1,13 +1,11 @@
 <?php
     include '../DAO/ProductDAO.php';
-
     session_start();
 
 
     $array = array();
     $userDao = new ProductDAO();
     $array = $userDao->selectProduct();
-
 
 ?>
 

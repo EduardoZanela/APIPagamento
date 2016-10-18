@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once('/opt/lampp/htdocs/APIPagamento/vendor/autoload.php');
+require_once('C:\xampp\htdocs\APIPagamento\vendor\autoload.php');
 
 use Omnipay\Omnipay;
 
@@ -16,6 +16,11 @@ $token = $_GET['token'];
 $payer = $_GET['PayerID'];
 
 $price = floatval ($_SESSION['price']);
+
+$_SESSION['valorComprado'] = $price;
+$_SESSION['pagamento'] = 'paypal';
+$_SESSION['id'] = $token;
+include '../controller/orderRegister.php';
 
 $params = array(
     'amount' => $price,
@@ -33,8 +38,7 @@ var_dump( $paypalResponse );
 
 if ($response->isSuccessful()) {
     // payment was successful: update database
-    echo "OLA";
-    header("location:../view/complete.php");
+    //header("location:../view/complete.php");
     // print_r($response);
 } elseif ($response->isRedirect()) {
     // redirect to offsite payment gateway

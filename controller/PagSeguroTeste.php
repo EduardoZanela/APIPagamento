@@ -1,14 +1,27 @@
 <?php
+
+session_start();
+
+header("access-control-allow-origin: https://sandbox.pagseguro.uol.com.br");
+
 require_once '../include/PagSeguroLibrary/PagSeguroLibrary.php';
 
 /** INICIO PROCESSO PAGSEGURO */
 $paymentrequest = new PagSeguroPaymentRequest();
 
+$price = floatval ($_SESSION['price']);
+
+$_SESSION['valorComprado'] = $price;
+$_SESSION['pagamento'] = 'pagSeguro';
+$_SESSION['id'] = $_SESSION['maxid'];
+
+include '../controller/orderRegister.php';
+
 $data = Array(
     'id' => '06', // identificador
-    'description' => 'Mouse', // descrição
-    'quantity' => 2, // quantidade
-    'amount' => 2.00, // valor unitário
+    'description' => $_SESSION['name'], // descrição
+    'quantity' => 1, // quantidade
+    'amount' => $price, // valor unitário
     'weight' => 10 // peso em gramas
 );
 $item = new PagSeguroItem($data);
@@ -24,15 +37,23 @@ $paymentrequest->setCurrency('BRL');
 $paymentrequest->setShipping(3);
 //Url de redirecionamento
 //$paymentrequest->setRedirectURL($redirectURL);// Url de retorno
+$paymentrequest->setRedirectUrl("http://www.google.com.br");
 
-$paymentrequest->setRedirectUrl("http://localhost/APIPagamento/index.php");
-
-$credentials = PagSeguroConfig::getAccountCredentials();//credenciais do vendedor
+//$credentials = PagSeguroConfig::getAccountCredentials();//credenciais do vendedor
 
 //$compra_id = App_Lib_Compras::insert($produto);
 //$paymentrequest->setReference($compra_id);//Referencia;
 
-$url = $paymentrequest->register($credentials);
+//$url = $paymentrequest->register($credentials);
+try {
 
-header("Location: $url");
+    $credentials = PagSeguroConfig::getAccountCredentials(); // getApplicationCredentials()
+    $checkoutUrl = $paymentrequest->register($credentials);
+
+} catch (PagSeguroServiceException $e) {
+    die($e->getMessage());
+}
+
+
+header("Location: $checkoutUrl");
 ?>

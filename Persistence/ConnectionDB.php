@@ -21,3 +21,5 @@ class ConnectionDB extends PDO{
     }
     
 }
+
+?>

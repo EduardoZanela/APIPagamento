@@ -69,10 +69,8 @@ session_start();
 
     <!-- Jumbotron Header -->
     <header class="jumbotron hero-spacer">
-        <h1>A Warm Welcome!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-        <p><a class="btn btn-primary btn-large">Call to action!</a>
-        </p>
+        <h1><?php echo $_SESSION['name'] ; echo $_SESSION['maxid'] ;?></h1>
+        <p><?php echo $_SESSION['description']?></p>
     </header>
 
     <hr>
@@ -98,6 +96,22 @@ session_start();
                         <a href="/APIPagamento/controller/checkoutPaypal.php" class="btn btn-primary">PAGAR</a>
                     </p>
                 </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="http://placehold.it/800x500" alt="">
+                <div class="caption">
+                    <h3>PagSeguro</h3>
+                    <p>Price: <?php echo $_SESSION['price'] ?></p>
+                    <p>
+                        <a href="/APIPagamento/controller/PagSeguroTeste.php" class="btn btn-primary">PAGAR</a>
+                    </p>
+                </div>
+
             </div>
         </div>
     </div>
