@@ -73,25 +73,27 @@
 
         <div class="container" style="width: 500px; float: left;">
             <h2>Dados do Cartão de Credito</h2>
-            <form>
+            <form action="../controller/stripe.php" method="post" name="cc_input">
                 <div class="form-group">
                     <label for="numero">Numero:</label>
-                    <input type="text" class="form-control" id="numero" placeholder="Numero do Cartão">
+                    <input type="text" class="form-control" name="cc_number" placeholder="4242424242424242"
+                        required="required">
                 </div>
                 <div class="form-group">
                     <label for="mes">Mes de Expiração:</label>
-                    <input type="text" class="form-control" id="mes" placeholder="Mes de Expiração">
+                    <input type="number" class="form-control" name="cc_month" placeholder="12" required="required">
                 </div>
                 <div class="form-group">
                     <label for="mes">Ano de Expiração:</label>
-                    <input type="text" class="form-control" id="mes" placeholder="Ano de Expiração">
+                    <input type="number" class="form-control" name="cc_year" placeholder="<?php echo date("Y"); ?>"
+                        required="required">
                 </div>
                 <div class="form-group">
                     <label for="cvv">Codigo de Segurança:</label>
-                    <input type="text" class="form-control" id="cvv" placeholder="Codigo de Segurança">
+                    <input type="text" class="form-control" name="cc_cvv" placeholder="123" required="required">
                 </div>
                 <p>
-                    <a href="../controller/stripe.php" class="btn btn-primary">PAGAR</a>
+                    <input type="submit" class="btn btn-primary" value="PAGAR" />
                 </p>
             </form>
         </div>
