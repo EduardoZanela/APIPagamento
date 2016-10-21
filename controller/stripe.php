@@ -30,7 +30,7 @@
         $response = $transaction->send();
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage() . "\n";
-        exit($e->getMessage());
+        die($e->getMessage());
     }
 
     if ($response->isSuccessful()) {

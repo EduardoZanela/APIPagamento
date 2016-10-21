@@ -21,13 +21,12 @@
         'returnUrl' => 'http:' . get_dir() . 'paypalCompletePurchase.php',
         'cancelUrl' => 'http:' . ROOT . 'view/index.php');
 
-    echo "<pre>\n";
-    print_r($params);
-    echo "getdir 222 " . get_dir() . " 222\n";
-    echo "</pre>\n";
-
-    $response = $gateway->purchase($params)->send();
-    var_dump( $paypalResponse );
+	try {
+		$response = $gateway->purchase($params)->send();
+	} catch (Exception $e) {
+		echo "Error: " . $e->getMessage() . "\n";
+		die($e->getMessage());
+	}
 
     $paypalResponse = $response->getData();
 

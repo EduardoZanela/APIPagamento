@@ -31,11 +31,14 @@ $params = array(
     'returnUrl' => 'http:' . get_dir() . 'paypalCompletePurchase.php',
     'cancelUrl' => 'http:' . ROOT . 'view/index.php');
 
-$response = $gateway->completePurchase($params)->send();
+try {
+	$response = $gateway->completePurchase($params)->send();
+} catch (Exception $e) {
+	echo "Error: " . $e->getMessage() . "\n";
+    die($e->getMessage());
+}
 
 $paypalResponse = $response->getData();
-
-var_dump( $paypalResponse );
 
 if ($response->isSuccessful()) {
     // payment was successful: update database

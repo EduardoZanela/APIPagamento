@@ -51,6 +51,7 @@ try {
     $checkoutUrl = $paymentrequest->register($credentials);
 
 } catch (PagSeguroServiceException $e) {
+	echo "Error: " . $e->getMessage() . "\n";
     die($e->getMessage());
 }
 

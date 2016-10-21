@@ -14,11 +14,15 @@ $params = array(
     'price' => 2.00, // valor unitário
 
 );
+
+try {
 $response = $gateway->purchase($params)->send();
+} catch (Exception $e) {
+	echo "Error: " . $e->getMessage() . "\n";
+    die($e->getMessage());
+}
 
 $paypalResponse = $response->getData();
-
-var_dump( $paypalResponse );
 
 if ($response->isSuccessful()) {
     // payment was successful: update database
