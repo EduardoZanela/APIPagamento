@@ -78,42 +78,8 @@
 
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
-            <h1>OLÁ CLIENTE</h1>
-            <p>Compre que é mais barato e etc</p>
+            <h1>integração@integração.com</h1>
         </header>
-
-        <hr>
-
-        <!-- Title -->
-        <div class="row" id="produtos">
-            <div class="col-lg-12">
-                <h3>Produtos Mais Vendidos</h3>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Page Features -->
-        <div class="row text-center">
-            <?php
-                foreach ($array as $a){
-            ?>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3><?php echo utf8_decode($a['name']); ?> </h3>
-                        <p><?php echo utf8_decode($a['description']); ?></p>
-                        <p>Price: <?php echo $a['price']; ?></p>
-                        <p>
-                            <a href="../controller/paymentController.php?productId=<?php echo $a['id']?>" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div><?php } ?>
-        </div>
-
-        <!-- /.row -->
 
         <hr>
 
