@@ -93,7 +93,7 @@ session_start();
                     <h3>Paypal</h3>
                     <p>Price: <?php echo $_SESSION['price'] ?></p>
                     <p>
-                        <a href="/APIPagamento/controller/checkoutPaypal.php" class="btn btn-primary">PAGAR</a>
+                        <a href="../controller/checkoutPaypal.php" class="btn btn-primary">PAGAR</a>
                     </p>
                 </div>
 
@@ -108,7 +108,7 @@ session_start();
                     <h3>PagSeguro</h3>
                     <p>Price: <?php echo $_SESSION['price'] ?></p>
                     <p>
-                        <a href="/APIPagamento/controller/PagSeguroTeste.php" class="btn btn-primary">PAGAR</a>
+                        <a href="../controller/PagSeguroTeste.php" class="btn btn-primary">PAGAR</a>
                     </p>
                 </div>
 

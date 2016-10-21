@@ -106,7 +106,7 @@
                         <p><?php echo utf8_decode($a['description']); ?></p>
                         <p>Price: <?php echo $a['price']; ?></p>
                         <p>
-                            <a href="/APIPagamento/controller/paymentController.php?productId=<?php echo $a['id']?>" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            <a href="../controller/paymentController.php?productId=<?php echo $a['id']?>" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>

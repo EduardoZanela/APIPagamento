@@ -1,6 +1,6 @@
 <?php
 
-require_once('/opt/lampp/htdocs/APIPagamento/vendor/autoload.php');
+require_once('../vendor/autoload.php');
 
 use Omnipay\Omnipay;
 

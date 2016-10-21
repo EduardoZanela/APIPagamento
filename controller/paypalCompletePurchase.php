@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once('C:\xampp\htdocs\APIPagamento\vendor\autoload.php');
+require_once('../vendor/autoload.php');
 
 use Omnipay\Omnipay;
 
