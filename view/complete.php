@@ -42,7 +42,7 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/APIPagamento/view/index.php">Integração API Pagamento</a>
+            <a class="navbar-brand" href="index.php">Integração API Pagamento</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -75,7 +75,7 @@ session_start();
     <hr>
 
     <p>
-        <a href="/APIPagamento/view/index.php" class="btn btn-primary">HOME</a>
+        <a href="index.php" class="btn btn-primary">HOME</a>
     </p>
 
     <hr>

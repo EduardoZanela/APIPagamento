@@ -43,7 +43,7 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/APIPagamento/view/index.php">Integração API Pagamento</a>
+            <a class="navbar-brand" href="index.php">Integração API Pagamento</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -122,7 +122,7 @@ session_start();
                     <h3>Cartão de Credito</h3>
                     <p>Price: <?php echo $_SESSION['price'] ?></p>
                     <p>
-                        <a href="/APIPagamento/view/cartao.php" class="btn btn-primary">PAGAR</a>
+                        <a href="cartao.php" class="btn btn-primary">PAGAR</a>
                     </p>
                 </div>
 

@@ -2,6 +2,7 @@
 
     session_start();
 
+    require_once('../include/functions.php');
     require_once('../vendor/autoload.php');
 
     use Omnipay\Omnipay;
@@ -19,8 +20,8 @@
     $params = array(
         'amount' => $price,
         'currency' => 'BRL',
-        'returnUrl' => 'http://localhost/APIPagamento/controller/paypalCompletePurchase.php',
-        'cancelUrl' => 'http://localhost/APIPagamento/view/index.php');
+        'returnUrl' => get_dir() . "paypalCompletePurchase.php",
+        'cancelUrl' => ROOT . "view/index.php");
 
     $response = $gateway->purchase($params)->send();
 

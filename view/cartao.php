@@ -43,7 +43,7 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/APIPagamento/view/index.php">Integração API Pagamento</a>
+            <a class="navbar-brand" href="index.php">Integração API Pagamento</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -95,7 +95,7 @@ session_start();
         <input type="text" class="form-control" id="cvv" placeholder="Codigo de Segurança">
       </div>
       <p>
-          <a href="/APIPagamento/controller/checkoutPaypal.php" class="btn btn-primary">PAGAR</a>
+          <a href="../controller/checkoutPaypal.php" class="btn btn-primary">PAGAR</a>
       </p>
     </form>
   </div>
