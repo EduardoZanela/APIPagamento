@@ -129,6 +129,19 @@ session_start();
             </div>
         </div>
 
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="http://placehold.it/800x500" alt="">
+                <div class="caption">
+                    <h3>PagSeguro (teste)</h3>
+                    <p>Price: <?php echo $_SESSION['price'] ?></p>
+                    <p>
+                        <a href="../controller/omnipayPagSeguro.php" class="btn btn-primary">PAGAR</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <!-- /.row -->

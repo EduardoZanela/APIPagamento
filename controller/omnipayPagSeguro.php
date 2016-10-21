@@ -10,24 +10,30 @@
 	$gateway->setToken('2BBC1CB8B0944D7292870A82BD9E9BF7');
 	$gateway->setSandbox(true); // right now i'm using testing environment
 
-	$params = array(
+    $price = floatval ($_SESSION['price']);
+    $_SESSION['valorComprado'] = $price;
+    $_SESSION['pagamento'] = 'cartaoCreditoStripe';
 
-		'price' => 2.00, // valor unitário
-
-	);
+	$transaction = $gateway->purchase(array(
+		'amount' => $price,
+		'name' => '123',
+		'quantity' => 1,
+		'description' => 'hello',
+		'price' => 1,
+		'currency' => 'BRL',
+		'weight' => 10
+	));
 
 	try {
-	$response = $gateway->purchase($params)->send();
+		$response = $transaction->send();
 	} catch (Exception $e) {
 		echo "Error: " . $e->getMessage() . "\n";
 		die($e->getMessage());
 	}
 
-	$paypalResponse = $response->getData();
-
 	if ($response->isSuccessful()) {
 		// payment was successful: update database
-		echo "OLA";
+		header("location:../view/complete.php");
 		// print_r($response);
 	} elseif ($response->isRedirect()) {
 		// redirect to offsite payment gateway
