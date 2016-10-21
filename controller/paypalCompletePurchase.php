@@ -28,8 +28,8 @@ $params = array(
     'currency' => 'BRL',
     'token' => "$token",
     'PayerID'=>"$payer",
-    'returnUrl' => get_dir() . "paypalCompletePurchase.php",
-    'cancelUrl' => ROOT . "view/index.php");
+    'returnUrl' => 'http:' . get_dir() . 'paypalCompletePurchase.php',
+    'cancelUrl' => 'http:' . ROOT . 'view/index.php');
 
 $response = $gateway->completePurchase($params)->send();
 

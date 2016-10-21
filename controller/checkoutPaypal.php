@@ -15,19 +15,21 @@
 
     $price = floatval ($_SESSION['price']);
 
-    echo $price;
-
     $params = array(
         'amount' => $price,
         'currency' => 'BRL',
-        'returnUrl' => get_dir() . "paypalCompletePurchase.php",
-        'cancelUrl' => ROOT . "view/index.php");
+        'returnUrl' => 'http:' . get_dir() . 'paypalCompletePurchase.php',
+        'cancelUrl' => 'http:' . ROOT . 'view/index.php');
+
+    echo "<pre>\n";
+    print_r($params);
+    echo "getdir 222 " . get_dir() . " 222\n";
+    echo "</pre>\n";
 
     $response = $gateway->purchase($params)->send();
+    var_dump( $paypalResponse );
 
     $paypalResponse = $response->getData();
-
-    var_dump( $paypalResponse );
 
     if ($response->isSuccessful()) {
         // payment was successful: update database
