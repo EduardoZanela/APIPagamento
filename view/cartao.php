@@ -75,7 +75,7 @@ session_start();
 
     <hr>
 
-    <div class="container">
+    <div class="container" style="width: 500px; float: left;">
     <h2>Dados do Cartão de Credito</h2>
     <form>
       <div class="form-group">
@@ -99,8 +99,7 @@ session_start();
       </p>
     </form>
   </div>
-
-    <hr>
+    
     <!-- Footer -->
     <footer>
         <div class="row">
