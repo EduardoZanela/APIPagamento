@@ -14,6 +14,7 @@ session_start();
     <meta name="author" content="">
 
     <title>API Pagamento</title>
+
     <!-- Bootstrap Core CSS -->
     <link href="../include/assets/css/bootstrap.min.css" rel="stylesheet">
 
@@ -66,17 +67,38 @@ session_start();
 <!-- Page Content -->
 <div class="container">
 
-    <!-- Jumbotron Header -->
-    <header class="jumbotron hero-spacer">
-        <h1>Obrigado por Compra Conosco</h1>
-        <p>Pedido: <?php if(isset($_SESSION['id'])) echo $_SESSION['id'];?></p>
-    </header>
+  <!-- Jumbotron Header -->
+  <header class="jumbotron hero-spacer">
+      <h1><?php echo $_SESSION['name'] ; echo $_SESSION['maxid'] ;?></h1>
+      <p><?php echo $_SESSION['description']?></p>
+  </header>
 
     <hr>
 
-    <p>
-        <a href="/APIPagamento/view/index.php" class="btn btn-primary">HOME</a>
-    </p>
+    <div class="container">
+    <h2>Dados do Cartão de Credito</h2>
+    <form>
+      <div class="form-group">
+        <label for="numero">Numero:</label>
+        <input type="text" class="form-control" id="numero" placeholder="Numero do Cartão">
+      </div>
+      <div class="form-group">
+        <label for="mes">Mes de Expiração:</label>
+        <input type="text" class="form-control" id="mes" placeholder="Mes de Expiração">
+      </div>
+      <div class="form-group">
+        <label for="mes">Ano de Expiração:</label>
+        <input type="text" class="form-control" id="mes" placeholder="Ano de Expiração">
+      </div>
+      <div class="form-group">
+        <label for="cvv">Codigo de Segurança:</label>
+        <input type="text" class="form-control" id="cvv" placeholder="Codigo de Segurança">
+      </div>
+      <p>
+          <a href="/APIPagamento/controller/checkoutPaypal.php" class="btn btn-primary">PAGAR</a>
+      </p>
+    </form>
+  </div>
 
     <hr>
     <!-- Footer -->

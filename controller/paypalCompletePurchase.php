@@ -38,7 +38,7 @@ var_dump( $paypalResponse );
 
 if ($response->isSuccessful()) {
     // payment was successful: update database
-    //header("location:../view/complete.php");
+    header("location:../view/complete.php");
     // print_r($response);
 } elseif ($response->isRedirect()) {
     // redirect to offsite payment gateway

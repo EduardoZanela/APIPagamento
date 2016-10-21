@@ -32,7 +32,7 @@ class ProductDAO{
             $status->execute();
 
             $array = array();
-            //$array = $status->fetch('id');
+            $array = $status->fetchAll();
 
             $this->connection = null;
 

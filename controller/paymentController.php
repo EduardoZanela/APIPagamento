@@ -1,9 +1,9 @@
 <?php
-
+session_start();
 include '../DAO/ProductDAO.php';
 include '../DAO/OrderDAO.php';
 
-session_start();
+
 
 if(isset($_GET['productId'])){
     $array = array();
@@ -15,10 +15,9 @@ if(isset($_GET['productId'])){
     foreach ($arrayOrder as $b) {
         $_SESSION['maxid'] = $b['id'];
     }
-    echo 'a';
+
     foreach ($array as $a) {
-        echo "olas";
-        echo $a['id'];
+        echo $a['name'];
         $_SESSION['id'] = $a['id'];
         $_SESSION['name'] = $a['name'];
         $_SESSION['description'] = $a['description'];
@@ -27,4 +26,4 @@ if(isset($_GET['productId'])){
     header("location:../view/pagamento.php");
 }
 
-
+?>

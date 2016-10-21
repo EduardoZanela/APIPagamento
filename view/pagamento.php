@@ -13,7 +13,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Heroic Features - Start Bootstrap Template</title>
+    <title>API Pagamento</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../include/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -43,19 +43,19 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="/APIPagamento/view/index.php">Integração API Pagamento</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">About</a>
+                    <a href="#">Sobre</a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
+                    <a href="#">Produtos</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="#">Contato</a>
                 </li>
             </ul>
         </div>
@@ -78,7 +78,7 @@ session_start();
     <!-- Title -->
     <div class="row">
         <div class="col-lg-12">
-            <h3>Latest Features</h3>
+            <h3>Modos de Pagamento</h3>
         </div>
     </div>
     <!-- /.row -->
@@ -114,6 +114,21 @@ session_start();
 
             </div>
         </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="http://placehold.it/800x500" alt="">
+                <div class="caption">
+                    <h3>Cartão de Credito</h3>
+                    <p>Price: <?php echo $_SESSION['price'] ?></p>
+                    <p>
+                        <a href="/APIPagamento/view/cartao.php" class="btn btn-primary">PAGAR</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
     <!-- /.row -->

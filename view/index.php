@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Heroic Features - Start Bootstrap Template</title>
+    <title>API Pagamento</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../include/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -52,19 +52,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="/APIPagamento/view/index.php">Integração API Pagamento</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#">Sobre</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#">Produtos</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#">Contato</a>
                     </li>
                 </ul>
             </div>
@@ -80,8 +80,6 @@
         <header class="jumbotron hero-spacer">
             <h1>A Warm Welcome!</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-            <p><a class="btn btn-primary btn-large">Call to action!</a>
-            </p>
         </header>
 
         <hr>
@@ -89,7 +87,7 @@
         <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
-                <h3>Latest Features</h3>
+                <h3>Produtos Mais Vendidos</h3>
             </div>
         </div>
         <!-- /.row -->
