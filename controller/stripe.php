@@ -1,32 +1,43 @@
 <?php
-    use Omnipay\Omnipay;
+    session_start();
 
-    $gateway = Omnipay::create('Stripe');
-    $gateway->setApiKey('abc123');
+    require_once('../vendor/autoload.php');
+
+    use Omnipay\Omnipay;
+    use Omnipay\Common\CreditCard;
+
+	$gateway = Omnipay::create('Stripe');
+    $gateway->setApiKey('sk_test_CHcjy1wiIiIJ8KJR7gHkVLOc');
 
     $price = floatval ($_SESSION['price']);
     $_SESSION['valorComprado'] = $price;
     $_SESSION['pagamento'] = 'cartaoCreditoStripe';
 
+    $card = new CreditCard(array(
+        'number'      => $_POST['cc_number'],
+        'expiryMonth' => $_POST['cc_month'],
+        'expiryYear'  => $_POST['cc_year'],
+        'cvv'         => $_POST['cc_cvv']
+    ));
 
-    $formData = array(
-        'number' => '4242424242424242',
-        'expiryMonth' => '6',
-        'expiryYear' => '2016',
-        'cvv' => '123'
-    );
+    $transaction = $gateway->purchase(array(
+        'amount'    => $price,
+        'currency'  => 'BRL',
+        'card'      => $card
+    ));
 
-    $response = $gateway->purchase(array(
-        'amount' => $price,
-        'currency' => 'BRL',
-        'card' => $formData
-    ))->send();
+    try {
+        $response = $transaction->send();
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage() . "\n";
+        exit($e->getMessage());
+    }
 
     if ($response->isSuccessful()) {
-        // payment was successful: update database
-        //print_r($response);
-        $_SESSION['id'] = $response->id;
+        $_SESSION['id'] = $response->getTransactionReference();
+
         include '../controller/orderRegister.php';
+
         header("location:../view/complete.php");
     } elseif ($response->isRedirect()) {
         // redirect to offsite payment gateway
